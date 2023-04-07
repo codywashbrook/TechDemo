@@ -8,6 +8,8 @@ public class Teleport : MonoBehaviour
 
     private Vector3 destination;
     public int direction;
+
+    public AudioSource teleportSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,7 @@ public class Teleport : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-
+        teleportSound.Play();
         other.gameObject.transform.position = destination;
 
 

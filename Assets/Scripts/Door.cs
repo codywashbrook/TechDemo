@@ -12,6 +12,9 @@ public class Door : MonoBehaviour
 
     public bool up = false;
 
+    public AudioSource doorUpSound;
+    public AudioSource doorDownSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +30,13 @@ public class Door : MonoBehaviour
         if (up == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, goUp, Time.deltaTime * speed);
-
+            AudioSource doorUpSound;
         }
 
         if (up == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, startPos, Time.deltaTime * speed);
-
+            AudioSource doorDownSound;
         }
     }
 }

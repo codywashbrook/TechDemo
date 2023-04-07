@@ -15,6 +15,8 @@ public class Platform : MonoBehaviour
 
     public choices direction;
 
+    public AudioSource platformSound;
+
     void Start()
     {
         startPos = transform.position;
@@ -27,6 +29,7 @@ public class Platform : MonoBehaviour
         switch (direction)
         {
             case choices.Forward:
+                //platformSound.Play();
                 endPos = startPos;
                 endPos.z = startPos.z + distance;
                 break;

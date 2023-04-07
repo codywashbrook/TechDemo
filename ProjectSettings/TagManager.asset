@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - CheckPoint
+  - GM
+  - KillBox
+  - PickUp
   layers:
   - Default
   - TransparentFX

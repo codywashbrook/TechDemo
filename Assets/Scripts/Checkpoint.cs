@@ -6,6 +6,9 @@ public class Checkpoint : MonoBehaviour
 {
     Vector3 spawnPoint;
     [SerializeField] private Transform player;
+    KillBox respawnPoint;
+    public AudioSource checkpointSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +18,7 @@ public class Checkpoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position.y < -20f)
+        if (gameObject.transform.position.y < 37f)
         {
             gameObject.transform.position = spawnPoint;
         }
@@ -26,10 +29,10 @@ public class Checkpoint : MonoBehaviour
 
         if (other.gameObject.tag == "CheckPoint")
         {
+            checkpointSound.Play();
             spawnPoint = other.gameObject.transform.position;
             Destroy(other.gameObject);
         }
 
     }
 }
-

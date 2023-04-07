@@ -6,6 +6,8 @@ public class DoorTrigger : MonoBehaviour
 {
     public Door door;
 
+    public AudioSource doorUpSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +23,9 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "GameController")
+        if (other.gameObject.tag == "PickUp") 
         {
+            doorUpSound.Play();
             door.up = true;
 
         }
@@ -30,7 +33,7 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "GameController")
+        if (other.gameObject.tag == "GameController") 
         {
             door.up = false;
 
